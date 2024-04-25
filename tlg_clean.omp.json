@@ -57,7 +57,7 @@
         {
           "foreground": "#43CCEA",
           "properties": {
-            "time_format": "03:04:05"
+            "time_format": "15:04:05"
           },
           "style": "diamond",
           "template": "<#FFFFFF>\uf017 </>{{ .CurrentDate | date .Format }}<#FFFFFF> | </>",
