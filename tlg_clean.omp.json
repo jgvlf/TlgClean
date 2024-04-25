@@ -1,0 +1,216 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#FF0000",
+          "style": "diamond",
+          "template": " {{ if .SSHSession }}\ueba9 {{ end }}<#ff6400>\uf007</> {{ .UserName }} / <#ff6400>\uf108</>  {{ .HostName }}",
+          "type": "session"
+        },
+        {
+          "foreground": "#ff6400",
+          "properties": {
+            "alpine": "\uf300",
+            "arch": "\uf303",
+            "centos": "\uf304",
+            "debian": "\uf306",
+            "elementary": "\uf309",
+            "fedora": "\uf30a",
+            "gentoo": "\uf30d",
+            "linux": "\ue712",
+            "macos": "\ue711",
+            "manjaro": "\uf312",
+            "mint": "\uf30f",
+            "opensuse": "\uf314",
+            "raspbian": "\uf315",
+            "ubuntu": "\uf31c",
+            "windows": "\ue62a",
+            "wsl": "\ue712"
+          },
+          "style": "plain",
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}}<#FFFFFF> | </>",
+          "type": "os"
+        },
+        {
+          "foreground": "#43CCEA",
+          "properties": {
+            "time_format": "Monday"
+          },
+          "style": "diamond",
+          "template": "{{ .CurrentDate | date .Format }} / ",
+          "type": "time"
+        },
+        {
+          "foreground": "#43CCEA",
+          "properties": {
+            "time_format": "02/01/2006"
+          },
+          "style": "diamond",
+          "template": "<#FFFFFF>\uf073 </>{{ .CurrentDate | date .Format }} / ",
+          "type": "time"
+        },
+        {
+          "foreground": "#43CCEA",
+          "properties": {
+            "time_format": "03:04:05"
+          },
+          "style": "diamond",
+          "template": "<#FFFFFF>\uf017 </>{{ .CurrentDate | date .Format }}<#FFFFFF> | </>",
+          "type": "time"
+        },
+        {
+          "foreground": "#ffffff",
+          "foreground_templates": [
+            "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
+            "{{if eq \"Discharging\" .State.String}}#FFFB38{{end}}",
+            "{{if eq \"Full\" .State.String}}#33DD2D{{end}}"
+          ],
+          "properties": {
+            "charged_icon": "\uf240 ",
+            "charging_icon": "\uf1e6 ",
+            "discharging_icon": "\ue234 "
+          },
+          "style": "plain",
+          "template": "{{ if not .Error }}{{ .Icon }} {{ .Percentage }}{{ end }}{{ .Error }}% ",
+          "type": "battery"
+        }
+      ]
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "type": "prompt",
+      "segments": [
+        {
+          "foreground": "#F1FA8C",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "diamond",
+          "template": "<#42E66C>\ueaf7 </><b>{{ .Path }}</b><#FFFFFF> | </>",
+          "type": "path"
+        },
+        {
+          "foreground": "#ee79d1",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "fetch_worktree_count": true
+          },
+          "style": "diamond",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        },
+        {
+          "foreground": "#3C873A",
+          "properties": {
+            "fetch_package_manager": true,
+            "npm_icon": " <#cc3a3a>\ue5fa</> ",
+            "yarn_icon": " <#348cba>\ue6a7</>"
+          },
+          "style": "plain",
+          "template": "<#ffffff>(</>{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}<#ffffff>)</>",
+          "type": "node"
+        },
+        {
+          "foreground": "#FFE873",
+          "style": "plain",
+          "template": "<#ffffff>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}<#ffffff>)</>",
+          "type": "python"
+        },
+        {
+          "foreground": "#ec2729",
+          "style": "plain",
+          "template": "<#ffffff>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#ffffff>)</>",
+          "type": "java"
+        },
+        {
+          "foreground": "#0d6da8",
+          "style": "plain",
+          "template": "<#ffffff>(</>{{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }}<#ffffff>)</>",
+          "type": "dotnet"
+        },
+        {
+          "foreground": "#06aad5",
+          "style": "plain",
+          "template": "<#ffffff>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#ffffff>)</>",
+          "type": "go"
+        },
+        {
+          "foreground": "#925837",
+          "style": "plain",
+          "template": "<#ffffff>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#ffffff>)</>",
+          "type": "rust"
+        },
+        {
+          "foreground": "#055b9c",
+          "style": "plain",
+          "template": "<#ffffff>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#ffffff>)</>",
+          "type": "dart"
+        },
+        {
+          "foreground": "#ce092f",
+          "style": "plain",
+          "template": "<#ffffff>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#ffffff>)</>",
+          "type": "angular"
+        },
+        {
+          "foreground": "#ffffff",
+          "style": "plain",
+          "template": "<#1e293b>(</>{{ if .Error }}{{ .Error }}{{ else }}Nx {{ .Full }}{{ end }}<#1e293b>)</>",
+          "type": "nx"
+        },
+        {
+          "foreground": "#359a25",
+          "style": "plain",
+          "template": "<#ffffff>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#ffffff>)</>",
+          "type": "julia"
+        },
+        {
+          "foreground": "#9c1006",
+          "style": "plain",
+          "template": "<#ffffff>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#ffffff>)</>",
+          "type": "ruby"
+        },
+        {
+          "foreground": "#5398c2",
+          "style": "plain",
+          "template": "<#ffffff>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#ffffff>)</>",
+          "type": "azfunc"
+        },
+        {
+          "foreground": "#faa029",
+          "style": "plain",
+          "template": "<#ffffff>(</>{{.Profile}}{{if .Region}}@{{.Region}}{{end}}<#ffffff>)</>",
+          "type": "aws"
+        },
+        {
+          "foreground": "#316ce4",
+          "style": "plain",
+          "template": "<#ffffff>(</>{{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}<#ffffff>)</>",
+          "type": "kubectl"
+        }
+      ]
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "type": "prompt",
+      "segments": [
+        {
+          "foreground": "#FFFFFF",
+          "style": "plain",
+          "template": "> ",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
