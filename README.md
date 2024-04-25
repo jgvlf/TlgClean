@@ -9,12 +9,12 @@ After installing, add this "tlg_clean.omp.json" file in the themes folder where 
 ## Demo:
 ### Default:
 
-![Default TlgClean Theme]("/imgs/default.png" "Default")
+<img src="imgs/default.png"/>
 
 ### With ".git" folder:
 
-![TlgClean Theme with a .git folder]("/imgs/git.png" "With Git")
+<img src="imgs/git.png"/>
 
 ### With a especial environment:
 
-![TlgClean Theme with a special environment in this case with venv (Python)]("/imgs/venv.png" "Especial Environment (venv -> Python)")
+<img src="imgs/venv.png"/>
