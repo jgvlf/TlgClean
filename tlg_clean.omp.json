@@ -207,7 +207,16 @@
         {
           "foreground": "#FFFFFF",
           "style": "plain",
-          "template": "> ",
+          "template": "{{ if gt .Code 0 }}<#ef5350>Error</>{{ else }}<#43CCEA>Done</>{{ end }}",
+          "type": "status",
+          "properties": {
+            "always_enabled": true
+          }
+        },
+        {
+          "foreground": "#FFFFFF",
+          "style": "plain",
+          "template": " > ",
           "type": "text"
         }
       ]
