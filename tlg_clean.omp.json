@@ -66,7 +66,7 @@
         {
           "foreground": "#ffffff",
           "foreground_templates": [
-            "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
+            "{{if eq \"Charging\" .State.String}}#FCFF8F{{end}}",
             "{{if eq \"Discharging\" .State.String}}#FF8F8F{{end}}",
             "{{if eq \"Full\" .State.String}}#33DD2D{{end}}"
           ],
