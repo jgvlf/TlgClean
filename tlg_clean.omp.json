@@ -176,26 +176,32 @@
         {
           "foreground": "#9c1006",
           "style": "plain",
-          "template": " <#FFFFFF>|</> <#ffffff>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#ffffff>)</>",
+          "template": " <#FFFFFF>|</> <#ffffff> (</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#ffffff>)</>",
           "type": "ruby"
         },
         {
           "foreground": "#5398c2",
           "style": "plain",
-          "template": " <#FFFFFF>|</> <#ffffff>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#ffffff>)</>",
+          "template": " <#FFFFFF>|</> <#ffffff> (</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#ffffff>)</>",
           "type": "azfunc"
         },
         {
           "foreground": "#faa029",
           "style": "plain",
-          "template": " <#FFFFFF>|</> <#ffffff>(</>{{.Profile}}{{if .Region}}@{{.Region}}{{end}}<#ffffff>)</>",
+          "template": " <#FFFFFF>|</> <#ffffff> (</>{{.Profile}}{{if .Region}}@{{.Region}}{{end}}<#ffffff>)</>",
           "type": "aws"
         },
         {
           "foreground": "#316ce4",
           "style": "plain",
-          "template": " <#FFFFFF>|</> <#ffffff>(</>{{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}<#ffffff>)</>",
+          "template": " <#FFFFFF>|</> <#ffffff> (</>{{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}<#ffffff>)</>",
           "type": "kubectl"
+        },
+        {
+          "type": "docker",
+          "style": "plain",
+          "foreground": "#1D63ED",
+          "template": "  {{ .Context }} "
         }
       ]
     },
